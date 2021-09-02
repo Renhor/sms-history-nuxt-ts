@@ -12,6 +12,7 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    semi: [2, 'always']
+    semi: [2, 'always'],
+    "import/named": 0,
   }
 };
