@@ -7481,6 +7481,11 @@ normalize-url@^6.1.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.1.0.tgz#40d0885b535deffe3f3147bec877d05fe4c5668a"
   integrity sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==
 
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
+
 npm-run-path@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-4.0.1.tgz#b7ecd1e5ed53da8e37a55e1c2269e0b97ed748ea"
@@ -10662,6 +10667,11 @@ vue@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
+
+vuex-module-decorators@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-1.0.1.tgz#d34dafb5428a3636f1c26d3d014c15fc9659ccd0"
+  integrity sha512-FLWZsXV5XAtl/bcKUyQFpnSBtpc3wK/7zSdy9oKbyp71mZd4ut5y2zSd219wWW9OG7WUOlVwac4rXFFDVnq7ug==
 
 vuex@^3.6.2:
   version "3.6.2"

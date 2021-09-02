@@ -1,0 +1,28 @@
+@font-face {
+  font-display: swap;
+  font-family: 'SF-Pro';
+  src:  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'),
+  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'SF-Pro';
+  src:  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-700.woff2') format('woff2'),
+  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-700.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SF-Pro';
+  src:  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-500.woff2') format('woff2'),
+  url('assets/fonts/roboto/roboto-v20-latin_cyrillic-500.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
