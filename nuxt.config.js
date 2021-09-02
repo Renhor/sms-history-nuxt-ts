@@ -28,6 +28,7 @@ export default {
   ],
 
   modules: [
+    '@nuxtjs/composition-api/module'
   ],
 
   build: {
