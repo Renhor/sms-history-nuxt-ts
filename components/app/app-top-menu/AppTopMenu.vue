@@ -15,19 +15,19 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, useStore } from '@nuxtjs/composition-api'
+import { computed, defineComponent } from '@nuxtjs/composition-api'
 import AppBalance from '~/components/app/app-balance/AppBalance.vue'
 import AppLogo from '~/components/app/app-logo/AppLogo.vue'
-import { rootKey } from '~/store'
 import MainContainer from '~/components/containers/main-container/MainContainer.vue'
 import { formatNumber } from '~/utils'
 import HamburgerButton from '~/components/app/app-top-menu/HamburgerButton.vue'
+import { useBaseStore } from '~/store'
 
 export default defineComponent({
   name: 'AppTopMenu',
   components: { HamburgerButton, MainContainer, AppLogo, AppBalance },
   setup() {
-    const store = useStore(rootKey)
+    const store = useBaseStore()
     const balance = computed(() => store.getters.balance)
     const formattedBalance = computed(() => formatNumber(store.getters.balance.actual))
 

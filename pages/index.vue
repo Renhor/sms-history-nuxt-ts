@@ -9,16 +9,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useStore, onBeforeMount, computed } from '@nuxtjs/composition-api'
-import { rootKey } from '~/store'
+import { defineComponent, onBeforeMount, computed } from '@nuxtjs/composition-api'
 import LibHeading from '~/components/lib/lib-heading/LibHeading.vue'
 import MainContainer from '~/components/containers/main-container/MainContainer.vue'
+import { useBaseStore } from '~/store'
 
 export default defineComponent({
   components: { MainContainer, LibHeading },
   layout: 'Default',
   setup() {
-    const store = useStore(rootKey)
+    const store = useBaseStore()
     const history = computed(() => store.getters.history)
 
     onBeforeMount(() => {
