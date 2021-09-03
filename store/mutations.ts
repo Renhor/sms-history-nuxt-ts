@@ -1,13 +1,13 @@
-import { MutationTree } from 'vuex';
-import { RootState } from '~/store/state';
+import { MutationTree } from 'vuex'
+import { RootState } from '~/store/state'
 
 export const mutations: MutationTree<RootState> = {
   SET_HISTORY(state, history) {
-    state.history = history;
+    state.history = history
   },
   CLEAR_HISTORY(state) {
-    state.history = [];
+    state.history = []
   }
-};
+}
 
-export default mutations;
+export default mutations

@@ -17,16 +17,22 @@ export default {
 
   css: [
     'normalize.css/normalize.css',
+    'reset-css/reset.css',
     { src: '@/assets/styles/_index.scss', lang: 'scss' }
   ],
 
   buildModules: [
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg'
   ],
+  styleResources: {
+    scss: ['./assets/styles/variables/*.scss', './assets/styles/mixins/*.scss']
+  },
 
   modules: [
     '@nuxtjs/composition-api/module'
   ],
 
   build: {}
-};
+}
