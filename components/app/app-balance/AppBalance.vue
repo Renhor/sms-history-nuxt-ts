@@ -10,21 +10,21 @@
       </span>
     </p>
 
-    <BaseButton size='slim'>
+    <LibButton size='slim'>
       Пополнить
-    </BaseButton>
+    </LibButton>
   </div>
 </template>
 
 <script lang='ts'>
 import { computed, defineComponent, PropType, toRefs } from '@nuxtjs/composition-api'
 import { IAppBalance } from '~/components/app/app-balance/types'
-import BaseButton from '~/components/lib/base-button/BaseButton.vue'
+import LibButton from '~/components/lib/lib-button/LibButton.vue'
 import { formatNumber } from '~/utils'
 
 export default defineComponent({
   name: 'AppBalance',
-  components: { BaseButton },
+  components: { LibButton },
   props: {
     balance: {
       type: Object as PropType<IAppBalance>,
@@ -60,6 +60,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   color: $color-text--white;
+  margin-right: 15px;
 }
 
 .app-balance_balance-actual {

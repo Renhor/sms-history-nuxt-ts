@@ -1,0 +1,4 @@
+$container-max-width: 1024px;
+$container-max-width-padding: 20px;
+
+$container-breakpoint: $container-max-width + ($container-max-width-padding * 2);

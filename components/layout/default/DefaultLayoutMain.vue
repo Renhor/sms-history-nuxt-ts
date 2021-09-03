@@ -1,5 +1,5 @@
 <template>
-  <main class='layout-main'>
+  <main class='layout-main --default'>
     <slot />
   </main>
 </template>
@@ -12,10 +12,18 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.layout-main {
+<style scoped lang='scss'>
+.layout-main.--default {
   flex: 1 1 300px;
   height: 100%;
   overflow-y: scroll;
+  padding: 50px;
+
+  @include breakpoint('medium') {
+    width: 100%;
+    padding: 40px 0 0;
+    overflow: hidden;
+    height: auto;
+  }
 }
 </style>

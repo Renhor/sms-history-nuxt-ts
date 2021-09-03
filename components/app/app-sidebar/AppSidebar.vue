@@ -11,21 +11,19 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, Ref, ref } from '@nuxtjs/composition-api'
+import { computed, defineComponent, useStore } from '@nuxtjs/composition-api'
 import AppLogo from '~/components/app/app-logo/AppLogo.vue'
 import AppBalance from '~/components/app/app-balance/AppBalance.vue'
-import { IAppBalance } from '~/components/app/app-balance/types'
 import SidebarMenu from '~/components/app/app-sidebar/SidebarMenu.vue'
 import SidebarCredentials from '~/components/app/app-sidebar/SidebarCredentials.vue'
+import { rootKey } from '~/store'
 
 export default defineComponent({
   name: 'AppSidebar',
   components: { SidebarCredentials, SidebarMenu, AppBalance, AppLogo },
   setup() {
-    const balance: Ref<IAppBalance> = ref({
-      actual: 200,
-      frozen: 1600,
-    })
+    const store = useStore(rootKey)
+    const balance = computed(() => store.getters.balance)
 
     return {
       balance

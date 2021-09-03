@@ -8,7 +8,7 @@
 import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'BaseButton',
+  name: 'LibButton',
   props: {
     variant: {
       type: String,
