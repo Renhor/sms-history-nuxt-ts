@@ -9,22 +9,22 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, ref } from '@nuxtjs/composition-api'
-import LibButton from '~/components/lib/lib-button/LibButton.vue'
+import { defineComponent, ref } from '@nuxtjs/composition-api';
+import LibButton from '~/components/lib/lib-button/LibButton.vue';
 
 export default defineComponent({
   name: 'HistorySearch',
   components: { LibButton },
   setup(_, { emit }) {
-    const searchString = ref('')
-    const emitEvent = () => emit('search', searchString.value)
+    const searchString = ref('');
+    const emitEvent = () => emit('search', searchString.value);
 
     return {
       searchString,
       emitEvent,
-    }
+    };
   }
-})
+});
 </script>
 
 <style lang='scss' scoped>

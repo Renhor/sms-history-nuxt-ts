@@ -11,10 +11,10 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api'
-import SvgUser from '~/assets/images/svg/user.svg?inline'
-import SvgExit from '~/assets/images/svg/exit.svg?inline'
-import { cropString } from '~/utils'
+import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api';
+import SvgUser from '~/assets/images/svg/user.svg?inline';
+import SvgExit from '~/assets/images/svg/exit.svg?inline';
+import { cropString } from '~/utils';
 
 export default defineComponent({
   name: 'SidebarCredentials',
@@ -30,14 +30,14 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { username } = toRefs(props)
-    const croppedName = computed(() => cropString(username.value, 17))
+    const { username } = toRefs(props);
+    const croppedName = computed(() => cropString(username.value, 17));
 
     return {
       croppedName,
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped lang='scss'>

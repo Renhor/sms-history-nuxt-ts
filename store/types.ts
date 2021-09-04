@@ -1,4 +1,4 @@
-import { DateString, Sites } from '~/types'
+import { DateString, Sites } from '~/types';
 
 export interface IHistoryItem {
   site: Sites;

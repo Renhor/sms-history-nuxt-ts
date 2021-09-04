@@ -5,12 +5,12 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'Error',
   layout: 'error'
-})
+});
 </script>
 
 <style scoped lang='scss'>

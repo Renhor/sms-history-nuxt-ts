@@ -11,25 +11,25 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent } from '@nuxtjs/composition-api'
-import AppLogo from '~/components/app/app-logo/AppLogo.vue'
-import AppBalance from '~/components/app/app-balance/AppBalance.vue'
-import SidebarMenu from '~/components/app/app-sidebar/SidebarMenu.vue'
-import SidebarCredentials from '~/components/app/app-sidebar/SidebarCredentials.vue'
-import { useBaseStore } from '~/store'
+import { computed, defineComponent } from '@nuxtjs/composition-api';
+import AppLogo from '~/components/app/app-logo/AppLogo.vue';
+import AppBalance from '~/components/app/app-balance/AppBalance.vue';
+import SidebarMenu from '~/components/app/app-sidebar/SidebarMenu.vue';
+import SidebarCredentials from '~/components/app/app-sidebar/SidebarCredentials.vue';
+import { useBaseStore } from '~/store';
 
 export default defineComponent({
   name: 'AppSidebar',
   components: { SidebarCredentials, SidebarMenu, AppBalance, AppLogo },
   setup() {
-    const store = useBaseStore()
-    const balance = computed(() => store.getters.balance)
+    const store = useBaseStore();
+    const balance = computed(() => store.getters.balance);
 
     return {
       balance
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped lang='scss'>

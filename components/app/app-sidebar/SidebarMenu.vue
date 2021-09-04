@@ -19,16 +19,16 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api'
-import SidebarMenuItem from '~/components/app/app-sidebar/SidebarMenuItem.vue'
-import NotificationCounter from '~/components/app/notifications/NotificationCounter.vue'
-import SvgBell from '~/assets/images/svg/bell.svg?inline'
-import SvgCalendar from '~/assets/images/svg/calendar.svg?inline'
+import { defineComponent } from '@nuxtjs/composition-api';
+import SidebarMenuItem from '~/components/app/app-sidebar/SidebarMenuItem.vue';
+import NotificationCounter from '~/components/app/notifications/NotificationCounter.vue';
+import SvgBell from '~/assets/images/svg/bell.svg?inline';
+import SvgCalendar from '~/assets/images/svg/calendar.svg?inline';
 
 export default defineComponent({
   name: 'SidebarMenu',
   components: { NotificationCounter, SidebarMenuItem, SvgBell, SvgCalendar }
-})
+});
 </script>
 
 <style scoped lang='scss'>

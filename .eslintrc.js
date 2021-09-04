@@ -16,4 +16,4 @@ module.exports = {
     "import/named": 0,
     'vue/no-dupe-keys': 0
   }
-}
+};

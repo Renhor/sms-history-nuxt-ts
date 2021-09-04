@@ -5,8 +5,8 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api'
-import LibBlock from '~/components/lib/lib-block/LibBlock.vue'
+import { defineComponent } from '@nuxtjs/composition-api';
+import LibBlock from '~/components/lib/lib-block/LibBlock.vue';
 
 export default defineComponent({
   name: 'HistoryList',
@@ -14,7 +14,7 @@ export default defineComponent({
   setup() {
 
   }
-})
+});
 </script>
 
 <style lang='scss'>

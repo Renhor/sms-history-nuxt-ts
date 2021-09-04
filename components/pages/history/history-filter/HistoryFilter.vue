@@ -15,14 +15,14 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api'
-import LibBlock from '~/components/lib/lib-block/LibBlock.vue'
-import LibHeading from '~/components/lib/lib-heading/LibHeading.vue'
+import { defineComponent } from '@nuxtjs/composition-api';
+import LibBlock from '~/components/lib/lib-block/LibBlock.vue';
+import LibHeading from '~/components/lib/lib-heading/LibHeading.vue';
 
 export default defineComponent({
   name: 'HistoryFilter',
   components: { LibHeading, LibBlock }
-})
+});
 </script>
 
 <style lang='scss'>

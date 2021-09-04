@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api'
+import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'NotificationCounter',
@@ -20,16 +20,16 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { amount, showOnZero } = toRefs(props)
+    const { amount, showOnZero } = toRefs(props);
     const shouldShow = computed(() => {
-      return showOnZero ? true : Boolean(amount)
-    })
+      return showOnZero ? true : Boolean(amount);
+    });
 
     return {
       shouldShow
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped lang='scss'>

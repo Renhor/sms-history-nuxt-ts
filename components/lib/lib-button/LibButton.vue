@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api'
+import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'LibButton',
@@ -22,18 +22,18 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { variant, size } = toRefs(props)
+    const { variant, size } = toRefs(props);
     const className = computed(() => [
       'lib-button',
       `--${variant.value}`,
       `--${size.value}`
-    ])
+    ]);
 
     return {
       className
-    }
+    };
   }
-})
+});
 </script>
 
 <style lang='scss'>

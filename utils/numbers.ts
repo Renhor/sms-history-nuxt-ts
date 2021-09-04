@@ -4,5 +4,5 @@ export const formatNumber = (number: number): string => {
     currency: 'RUB',
     maximumFractionDigits: 0,
     minimumFractionDigits: 0
-  }).format(number)
-}
+  }).format(number);
+};

@@ -11,15 +11,15 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api'
-import DefaultLayoutMain from '~/components/layout/default/DefaultLayoutMain.vue'
-import AppSidebar from '~/components/app/app-sidebar/AppSidebar.vue'
-import AppTopMenu from '~/components/app/app-top-menu/AppTopMenu.vue'
+import { defineComponent } from '@nuxtjs/composition-api';
+import DefaultLayoutMain from '~/components/layout/default/DefaultLayoutMain.vue';
+import AppSidebar from '~/components/app/app-sidebar/AppSidebar.vue';
+import AppTopMenu from '~/components/app/app-top-menu/AppTopMenu.vue';
 
 export default defineComponent({
   name: 'Default',
   components: { AppTopMenu, AppSidebar, DefaultLayoutMain }
-})
+});
 </script>
 
 <style scoped lang='scss'>
