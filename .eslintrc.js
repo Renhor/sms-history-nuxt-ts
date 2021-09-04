@@ -12,8 +12,8 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    semi: [2, 'never'],
+    semi: [2, 'always'],
     "import/named": 0,
-    'vue/no-dupe-keys': 0,
+    'vue/no-dupe-keys': 0
   }
 }

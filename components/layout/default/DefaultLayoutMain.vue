@@ -19,9 +19,13 @@ export default defineComponent({
   overflow-y: scroll;
   padding: 50px;
 
+  @include breakpoint('big') {
+    padding: 40px 20px;
+  }
+
   @include breakpoint('medium') {
     width: 100%;
-    padding: 40px 0 0;
+    padding: 40px 0;
     overflow: hidden;
     height: auto;
   }

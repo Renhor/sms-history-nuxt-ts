@@ -6,8 +6,12 @@ $color-blue--darker: #006df3;
 $color-green: #26A69A;
 $color-white: #FFFFFF;
 $color-gray: #616161;
+$color-gray--lighter: #DEDEDE;
+$color-gray--light: #F6F7F8;
 
 $color-text--default: $color-primary;
 $color-text--secondary: $color-gray;
 $color-text--white: $color-white;
 
+$color-background: $color-gray--light;
+$color-border: $color-gray--lighter;

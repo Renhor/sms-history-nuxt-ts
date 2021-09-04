@@ -10,4 +10,10 @@
       @content
     }
   }
+
+  @else if $size == 'big' {
+    @media all and (max-width: 1700px) {
+      @content
+    }
+  }
 }

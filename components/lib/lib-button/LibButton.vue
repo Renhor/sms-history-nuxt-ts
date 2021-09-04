@@ -1,5 +1,5 @@
 <template>
-  <button :class='className'>
+  <button :class='className' @click='$emit("click")'>
     <slot />
   </button>
 </template>
@@ -24,7 +24,7 @@ export default defineComponent({
   setup(props) {
     const { variant, size } = toRefs(props)
     const className = computed(() => [
-      'button',
+      'lib-button',
       `--${variant.value}`,
       `--${size.value}`
     ])

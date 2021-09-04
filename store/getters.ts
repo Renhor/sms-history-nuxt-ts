@@ -1,9 +1,21 @@
-import { GetterTree } from 'vuex'
-import { RootState } from '~/store/state'
+import { GetterTree } from 'vuex';
+import { RootState } from '~/store/state';
 
 export const getters: GetterTree<RootState, RootState> = {
   history: (state) => state.history,
-  balance: (state) => state.balance
-}
+  historySearchString: (state) => state.searchString,
+  balance: (state) => state.balance,
 
-export default getters
+  filteredHistory: (state) => {
+    if (!state.searchString) return state.history;
+
+    return state.history.filter((item) => {
+      return (
+        item.message.includes(state.searchString) ||
+        item.number.toString().includes(item.number.toString())
+      );
+    });
+  },
+};
+
+export default getters;

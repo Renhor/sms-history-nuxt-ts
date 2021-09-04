@@ -1,0 +1,21 @@
+%input-shared {
+  padding: 8px 10px;
+  border: 1px solid $color-gray--lighter;
+  width: 100%;
+  max-width: 100%;
+  border-radius: $radius-input--default;
+  font-size: $font-size--default;
+
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+select {
+  @extend %input-shared;
+}
+
+input {
+  @extend %input-shared;
+}

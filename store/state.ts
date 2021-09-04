@@ -2,6 +2,7 @@ import { IHistory } from '~/store/types'
 
 export const state = () => ({
   history: [] as IHistory,
+  searchString: '',
   balance: {
     frozen: 1600,
     actual: 200

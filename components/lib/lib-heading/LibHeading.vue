@@ -1,5 +1,5 @@
 <template>
-  <component :is='variant' class='heading'>
+  <component :is='variant' class='lib-heading'>
     <slot />
   </component>
 </template>
