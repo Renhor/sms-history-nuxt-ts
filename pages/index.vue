@@ -58,6 +58,7 @@ export default defineComponent({
 
 .page.--home {
   .row {
+    align-items: flex-start;
     display: flex;
     margin: 0 -19px;
 
@@ -67,11 +68,12 @@ export default defineComponent({
   }
 
   .col {
-    flex: 4.2 1 auto;
+    flex: 1 1 72%;
   }
 
   .history-filter {
-    flex: 1 1 auto;
+    flex: 1 1 28%;
+    min-width: 375px;
   }
 
   .history-search {
@@ -81,6 +83,16 @@ export default defineComponent({
   @include breakpoint('big') {
     .row {
       flex-direction: column;
+    }
+
+    .col,
+    .row,
+    .history-filter {
+      width: 100%;
+    }
+
+    .history-filter {
+      flex-basis: auto;
     }
 
     .history-search {

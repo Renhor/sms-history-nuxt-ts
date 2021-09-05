@@ -29,5 +29,6 @@ export default defineComponent({
     overflow: hidden;
     height: auto;
   }
+
 }
 </style>

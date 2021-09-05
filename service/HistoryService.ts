@@ -1,27 +1,52 @@
 import { IHistoryItem } from '~/store/types';
-import { DateString, Sites } from '~/types';
+import { Sites } from '~/types';
+import { randomBetween, randomDate } from '~/utils';
 
 export class HistoryService {
   getList() {
-    return this.generateList(10);
+    return this.generateList(100);
   }
 
   private generateList(length: number) {
     const list: IHistoryItem[] = [];
-    const site: Sites = 'avito';
-    const date: DateString = '05.09.2020 в 16:30:15.';
-    const message = 'Ваш код для регистрации на Авито. Никому его не говорите это';
-    let initialNumber = 7634383426;
+    let initialNumber = 79271234567;
 
     for (let i = 0; i < length; i++) {
-      list.push({
-        site,
-        date,
-        message,
-        number: initialNumber++,
-      });
+      list.push(this.generateItem(initialNumber));
+      initialNumber++;
     }
 
     return list;
+  }
+
+  private generateItem(number: number): IHistoryItem {
+    return {
+      site: this.generateSite(),
+      date: randomDate('01-01-2019').toLocaleString().replace(', ', ' в '),
+      message: this.generateMessage(),
+      number,
+    };
+  }
+
+  private generateSite(): Sites {
+    const random = randomBetween(0, 100);
+
+    if (random > 66) return 'avito';
+    if (random > 33) return 'yandex';
+
+    return 'OK';
+  }
+
+  private generateMessage(): string {
+    const initial = 'Ваш код для регистрации на Авито. Никому его не говорите это ';
+    const maxLength = 500;
+    const length = randomBetween(0, maxLength);
+    let message = initial;
+
+    while (message.length < length) {
+      message += initial;
+    }
+
+    return message;
   }
 }

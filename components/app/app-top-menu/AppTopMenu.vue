@@ -19,7 +19,7 @@ import { computed, defineComponent } from '@nuxtjs/composition-api';
 import AppBalance from '~/components/app/app-balance/AppBalance.vue';
 import AppLogo from '~/components/app/app-logo/AppLogo.vue';
 import MainContainer from '~/components/containers/main-container/MainContainer.vue';
-import { formatNumber } from '~/utils';
+import { formatCurrency } from '~/utils';
 import HamburgerButton from '~/components/app/app-top-menu/HamburgerButton.vue';
 import { useBaseStore } from '~/store';
 
@@ -29,7 +29,7 @@ export default defineComponent({
   setup() {
     const store = useBaseStore();
     const balance = computed(() => store.getters.balance);
-    const formattedBalance = computed(() => formatNumber(store.getters.balance.actual));
+    const formattedBalance = computed(() => formatCurrency(store.getters.balance.actual));
 
     return {
       balance,

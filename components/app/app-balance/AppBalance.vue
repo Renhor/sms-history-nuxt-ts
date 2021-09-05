@@ -20,7 +20,7 @@
 import { computed, defineComponent, PropType, toRefs } from '@nuxtjs/composition-api';
 import { IAppBalance } from '~/components/app/app-balance/types';
 import LibButton from '~/components/lib/lib-button/LibButton.vue';
-import { formatNumber } from '~/utils';
+import { formatCurrency } from '~/utils';
 
 export default defineComponent({
   name: 'AppBalance',
@@ -34,8 +34,8 @@ export default defineComponent({
   setup(props) {
     const { balance } = toRefs(props);
     const formattedBalance = computed(() => ({
-      actual: formatNumber(balance.value.actual),
-      frozen: formatNumber(balance.value.frozen),
+      actual: formatCurrency(balance.value.actual),
+      frozen: formatCurrency(balance.value.frozen),
     }));
 
     return {

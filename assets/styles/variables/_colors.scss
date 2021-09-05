@@ -5,13 +5,16 @@ $color-blue: #008BF3;
 $color-blue--darker: #006df3;
 $color-green: #26A69A;
 $color-white: #FFFFFF;
+$color-white--darker: #F6F7F8;
+
 $color-gray: #616161;
-$color-gray--lighter: #DEDEDE;
-$color-gray--light: #F6F7F8;
+$color-gray--lighter: #999999;
+$color-gray--light: #DEDEDE;
 
 $color-text--default: $color-primary;
 $color-text--secondary: $color-gray;
+$color-text--minor: $color-gray--lighter;
 $color-text--white: $color-white;
 
-$color-background: $color-gray--light;
-$color-border: $color-gray--lighter;
+$color-background: $color-white--darker;
+$color-border: $color-gray--light;
