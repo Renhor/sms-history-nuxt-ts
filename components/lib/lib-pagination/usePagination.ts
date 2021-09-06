@@ -1,4 +1,4 @@
-import { computed, ComputedRef, Ref, ref } from '@nuxtjs/composition-api';
+import { computed, ComputedRef, Ref, ref, watch } from '@nuxtjs/composition-api';
 
 export interface PaginationHookProps<T = any[]> {
   list: Ref<T>;
@@ -8,6 +8,7 @@ export interface PaginationHookProps<T = any[]> {
 
 export interface PaginationHookReturn<T = any[]> {
   currentList: ComputedRef<T>;
+  currentPage: Ref<number>;
   totalPages: ComputedRef<number>;
   setPage: (page: number) => void;
 }
@@ -35,7 +36,14 @@ export const usePagination: PaginationHook = ({ list, initialPage, perPage }) =>
     currentPage.value = newPage;
   };
 
+  watch(list, () => {
+    if (list.value.length < currentPage.value * perPage) {
+      setPage(1);
+    }
+  });
+
   return {
+    currentPage,
     currentList,
     totalPages,
     setPage,

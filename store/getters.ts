@@ -4,17 +4,28 @@ import { RootState } from '~/store/state';
 export const getters: GetterTree<RootState, RootState> = {
   history: (state) => state.history,
   searchString: (state) => state.searchString,
+  operationType: (state) => state.operationType,
   balance: (state) => state.balance,
+  initialPage: (state) => state.initialPage,
 
   filteredHistory: (state) => {
-    if (!state.searchString) return state.history;
+    const { searchString, operationType, history } = state;
+    let filtered = history.slice();
 
-    return state.history.filter((item) => {
-      return (
-        item.message.includes(state.searchString) ||
-        item.number.toString().includes(state.searchString.replace(/\D/g, ''))
-      );
-    });
+    if (searchString) {
+      filtered = filtered.filter((item) => {
+        return (
+          item.message.includes(searchString) ||
+          item.number.toString().includes(searchString.replace(/\D/g, ''))
+        );
+      });
+    }
+
+    if (operationType !== 'all') {
+      filtered = filtered.filter((item) => item.type === operationType);
+    }
+
+    return filtered;
   },
 };
 

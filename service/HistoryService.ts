@@ -1,10 +1,10 @@
-import { IHistoryItem } from '~/store/types';
+import { HistoryItemType, IHistoryItem } from '~/store/types';
 import { Sites } from '~/types';
 import { randomBetween, randomDate } from '~/utils';
 
 export class HistoryService {
   getList() {
-    return this.generateList(50);
+    return this.generateList(100);
   }
 
   private generateList(length: number) {
@@ -24,9 +24,14 @@ export class HistoryService {
       site: this.generateSite(),
       date: randomDate('01-01-2019').toLocaleString().replace(', ', ' в '),
       message: this.generateMessage(),
+      type: this.generateType(),
       number,
       id,
     };
+  }
+
+  private generateType(): HistoryItemType {
+    return randomBetween(0, 100) > 50 ? 'message' : 'not-message';
   }
 
   private generateSite(): Sites {

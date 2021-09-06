@@ -6,13 +6,17 @@
       </LibHeading>
 
       <div class='row'>
-        <HistoryFilter />
+        <HistoryFilter :selected='filter' @filter='onFilter' />
 
         <div class='col'>
           <HistorySearch @search='onSearch' />
 
           <ClientOnly>
-            <HistoryList :list='filteredHistory' />
+            <HistoryList
+              :initial-page='initialPage'
+              :list='filteredHistory'
+              @pageChanged='onPageChange'
+            />
           </ClientOnly>
         </div>
       </div>
@@ -29,6 +33,7 @@ import { useBaseStore } from '~/store';
 import HistoryFilter from '~/components/pages/history/history-filter/HistoryFilter.vue';
 import HistorySearch from '~/components/pages/history/history-search/HistorySearch.vue';
 import HistoryList from '~/components/pages/history/history-list/HistoryList.vue';
+import { OperationType } from '~/store/types';
 
 export default defineComponent({
   components: { HistoryList, HistorySearch, HistoryFilter, MainContainer, LibHeading },
@@ -36,6 +41,8 @@ export default defineComponent({
   setup() {
     const store = useBaseStore();
     const filteredHistory = computed(() => store.getters.filteredHistory);
+    const filter = computed(() => store.getters.operationType);
+    const initialPage = computed(() => store.getters.initialPage);
 
     onBeforeMount(() => {
       store.dispatch('loadHistory');
@@ -43,11 +50,27 @@ export default defineComponent({
 
     const onSearch = (newString: string) => {
       store.commit('SET_SEARCH_STRING', newString);
+      store.commit('SET_INITIAL_PAGE', 1);
     };
 
+    const onFilter = (type: OperationType) => {
+      store.commit('SET_FILTER', type);
+      store.commit('SET_INITIAL_PAGE', 1);
+    };
+
+    const onPageChange = (page: number) => {
+      store.commit('SET_INITIAL_PAGE', page);
+    };
+
+    store.subscribe(() => store.dispatch('saveToStorage'));
+
     return {
+      filter,
+      initialPage,
       filteredHistory,
       onSearch,
+      onFilter,
+      onPageChange,
     };
   },
 });

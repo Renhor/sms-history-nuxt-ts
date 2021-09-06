@@ -6,23 +6,70 @@
 
     <p>Тип операции:</p>
 
-    <select>
-      <option>
-        Все операции
+    <select @change='onChange'>
+      <option
+        v-for='option in options'
+        :key='option.value'
+        :value='option.value'
+        :selected='value === option.value'
+      >
+        {{ option.text }}
       </option>
     </select>
   </LibBlock>
 </template>
 
 <script lang='ts'>
-import { defineComponent } from '@nuxtjs/composition-api';
+import { computed, defineComponent, PropType, ref, toRefs } from '@nuxtjs/composition-api';
 import LibBlock from '~/components/lib/lib-block/LibBlock.vue';
 import LibHeading from '~/components/lib/lib-heading/LibHeading.vue';
+import { OperationType } from '~/store/types';
 
 export default defineComponent({
   name: 'HistoryFilter',
-  components: { LibHeading, LibBlock }
+  components: { LibHeading, LibBlock },
+  props: {
+    selected: {
+      type: String as PropType<OperationType>,
+      default: 'all',
+    },
+  },
+  setup(props, { emit }) {
+    const { selected } = toRefs(props);
+    const innerValue = ref(selected.value);
+    const value = computed(() =>  selected.value || innerValue.value);
+
+    const options = makeSelectOptions();
+    const onChange = (e: Event) => {
+      innerValue.value = e.target.value;
+
+      emit('filter', e.target.value);
+    };
+
+    return {
+      value,
+      options,
+      onChange,
+    };
+  },
 });
+
+function makeSelectOptions(): { value: OperationType, text: string }[] {
+  return [
+    {
+      value: 'all',
+      text: 'Все операции',
+    },
+    {
+      value: 'message',
+      text: 'Сообщения',
+    },
+    {
+      value: 'not-message',
+      text: 'Не сообщения',
+    },
+  ];
+}
 </script>
 
 <style lang='scss'>

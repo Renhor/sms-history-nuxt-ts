@@ -26,7 +26,7 @@
 </template>
 
 <script lang='ts'>
-import { computed, defineComponent, ref, toRefs } from '@nuxtjs/composition-api';
+import { computed, defineComponent, ref, toRefs, watch } from '@nuxtjs/composition-api';
 import LibPaginationItem from '~/components/lib/lib-pagination/LibPaginationItem.vue';
 import { makeRange, rangeFromLength } from '~/utils';
 
@@ -98,6 +98,10 @@ export default defineComponent({
       }
 
       return pages;
+    });
+
+    watch(totalPages, () => {
+      currentPage.value = initialPage.value;
     });
 
     return {

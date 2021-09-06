@@ -18,7 +18,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, PropType, toRefs } from '@nuxtjs/composition-api';
+import { defineComponent, PropType, toRefs, watch } from '@nuxtjs/composition-api';
 import LibBlock from '~/components/lib/lib-block/LibBlock.vue';
 import { IHistory } from '~/store/types';
 import HistoryRowHeader from '~/components/pages/history/history-list/HistoryRowHeader.vue';
@@ -33,20 +33,26 @@ export default defineComponent({
     list: {
       type: Array as PropType<IHistory>,
       default: () => []
+    },
+    initialPage: {
+      type: Number,
+      default: 1,
     }
   },
-  setup(props) {
-    const { list } = toRefs(props);
-    const initialPage = 1;
+  setup(props, { emit }) {
+    const { list, initialPage } = toRefs(props);
 
-    const { currentList, totalPages, setPage } = usePagination<IHistory>({
-      initialPage,
+    const { currentList, totalPages, setPage, currentPage } = usePagination<IHistory>({
+      initialPage: initialPage.value,
       perPage: 5,
       list,
     });
 
+    watch(currentPage, () => {
+      emit('pageChanged', currentPage.value);
+    });
+
     return {
-      initialPage,
       currentList,
       totalPages,
       setPage,
