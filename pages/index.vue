@@ -11,7 +11,9 @@
         <div class='col'>
           <HistorySearch @search='onSearch' />
 
-          <HistoryList :list='filteredHistory' />
+          <ClientOnly>
+            <HistoryList :list='filteredHistory' />
+          </ClientOnly>
         </div>
       </div>
 
@@ -19,8 +21,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onBeforeMount, computed } from '@nuxtjs/composition-api';
+<script lang='ts'>
+import { computed, defineComponent, onBeforeMount } from '@nuxtjs/composition-api';
 import LibHeading from '~/components/lib/lib-heading/LibHeading.vue';
 import MainContainer from '~/components/containers/main-container/MainContainer.vue';
 import { useBaseStore } from '~/store';
@@ -45,9 +47,9 @@ export default defineComponent({
 
     return {
       filteredHistory,
-      onSearch
+      onSearch,
     };
-  }
+  },
 });
 </script>
 

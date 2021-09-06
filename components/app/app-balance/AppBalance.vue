@@ -18,9 +18,9 @@
 
 <script lang='ts'>
 import { computed, defineComponent, PropType, toRefs } from '@nuxtjs/composition-api';
-import { IAppBalance } from '~/components/app/app-balance/types';
 import LibButton from '~/components/lib/lib-button/LibButton.vue';
 import { formatCurrency } from '~/utils';
+import { IAppBalance } from '~/store/types';
 
 export default defineComponent({
   name: 'AppBalance',

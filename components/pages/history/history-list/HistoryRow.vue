@@ -62,8 +62,6 @@ export default defineComponent({
 
     @include breakpoint('small') {
       order: -1;
-      font-size: $font-size--big;
-      font-weight: bold;
     }
   }
 

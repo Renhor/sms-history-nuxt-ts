@@ -1,0 +1,24 @@
+.lib-pagination {
+  .lib-button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 0 2px;
+    border-radius: $radius-button--small;
+    transition: none;
+
+    &.--pagination-null {
+      color: $color-gray--light-max;
+
+      &:hover {
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.lib-pagination_row {
+  display: flex;
+  align-items: center;
+}
+

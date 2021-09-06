@@ -1,7 +1,7 @@
 <template>
   <div class='phone-number'>
     <img src='~assets/images/icons/russia.png' alt='Russia ico'>
-    <span>{{ formatted }}</span>
+    <span class='phone-number_number'>{{ formatted }}</span>
   </div>
 </template>
 

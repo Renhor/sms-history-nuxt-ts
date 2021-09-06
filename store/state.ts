@@ -1,4 +1,4 @@
-import { IHistory } from '~/store/types';
+import { IAppBalance, IHistory } from '~/store/types';
 
 export const state = () => ({
   history: [] as IHistory,
@@ -6,7 +6,7 @@ export const state = () => ({
   balance: {
     frozen: 1600,
     actual: 200
-  }
+  } as IAppBalance
 });
 
 export type RootState = ReturnType<typeof state>

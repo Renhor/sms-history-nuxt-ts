@@ -59,5 +59,12 @@ export default defineComponent({
   svg {
     cursor: pointer;
   }
+
+  .phone-number_number {
+    @include breakpoint('small') {
+      font-size: $font-size--big;
+      font-weight: bold;
+    }
+  }
 }
 </style>

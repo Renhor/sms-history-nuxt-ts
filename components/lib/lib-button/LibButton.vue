@@ -1,5 +1,6 @@
 <template>
   <button :class='className' @click='$emit("click")'>
+    {{ text }}
     <slot />
   </button>
 </template>
@@ -12,13 +13,17 @@ export default defineComponent({
   props: {
     variant: {
       type: String,
-      validate: (prop: string) => ['primary'].includes(prop),
+      validate: (prop: string) => ['primary', 'secondary'].includes(prop),
       default: 'primary'
     },
     size: {
       type: String,
       validate: (prop: string) => ['wide', 'slim'].includes(prop),
       default: 'wide'
+    },
+    text: {
+      type: [Number, String],
+      default: '',
     }
   },
   setup(props) {

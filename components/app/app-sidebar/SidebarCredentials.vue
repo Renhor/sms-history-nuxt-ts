@@ -43,7 +43,7 @@ export default defineComponent({
 <style scoped lang='scss'>
 .sidebar-credentials {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 
   svg {
     margin-top: -1px;

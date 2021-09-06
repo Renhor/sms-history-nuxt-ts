@@ -3,7 +3,7 @@ import { RootState } from '~/store/state';
 
 export const getters: GetterTree<RootState, RootState> = {
   history: (state) => state.history,
-  historySearchString: (state) => state.searchString,
+  searchString: (state) => state.searchString,
   balance: (state) => state.balance,
 
   filteredHistory: (state) => {
@@ -12,7 +12,7 @@ export const getters: GetterTree<RootState, RootState> = {
     return state.history.filter((item) => {
       return (
         item.message.includes(state.searchString) ||
-        item.number.toString().includes(item.number.toString())
+        item.number.toString().includes(state.searchString.replace(/\D/g, ''))
       );
     });
   },

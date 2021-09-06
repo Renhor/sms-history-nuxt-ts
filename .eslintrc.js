@@ -13,6 +13,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     semi: [2, 'always'],
+    'max-len': ["error", { "code": 100 }],
     "import/named": 0,
     'vue/no-dupe-keys': 0
   }

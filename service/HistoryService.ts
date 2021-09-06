@@ -4,27 +4,28 @@ import { randomBetween, randomDate } from '~/utils';
 
 export class HistoryService {
   getList() {
-    return this.generateList(100);
+    return this.generateList(50);
   }
 
   private generateList(length: number) {
     const list: IHistoryItem[] = [];
     let initialNumber = 79271234567;
+    let initialId = 1;
 
     for (let i = 0; i < length; i++) {
-      list.push(this.generateItem(initialNumber));
-      initialNumber++;
+      list.push(this.generateItem(initialNumber++, initialId++));
     }
 
     return list;
   }
 
-  private generateItem(number: number): IHistoryItem {
+  private generateItem(number: number, id: number): IHistoryItem {
     return {
       site: this.generateSite(),
       date: randomDate('01-01-2019').toLocaleString().replace(', ', ' в '),
       message: this.generateMessage(),
       number,
+      id,
     };
   }
 
