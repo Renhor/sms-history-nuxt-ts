@@ -42,7 +42,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const { list, initialPage } = toRefs(props);
 
-    const { currentList, totalPages, setPage, currentPage } = usePagination<IHistory>({
+    const { currentList, totalPages, setPage, currentPage } = usePagination({
       initialPage: initialPage.value,
       perPage: 5,
       list,

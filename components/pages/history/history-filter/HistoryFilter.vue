@@ -6,7 +6,7 @@
 
     <p>Тип операции:</p>
 
-    <select @change='onChange'>
+    <select @change='onChange($event.target)'>
       <option
         v-for='option in options'
         :key='option.value'
@@ -40,10 +40,10 @@ export default defineComponent({
     const value = computed(() =>  selected.value || innerValue.value);
 
     const options = makeSelectOptions();
-    const onChange = (e: Event) => {
-      innerValue.value = e.target.value;
+    const onChange = (target: HTMLSelectElement) => {
+      innerValue.value = target.value as OperationType;
 
-      emit('filter', e.target.value);
+      emit('filter', innerValue.value);
     };
 
     return {
