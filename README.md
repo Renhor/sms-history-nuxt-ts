@@ -1,6 +1,6 @@
 # sms-history
 
-A test project to test nuxt3 + vue3
+A test project to test nuxt2
 
 ## Build Setup
 
